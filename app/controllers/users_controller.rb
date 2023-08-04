@@ -57,6 +57,7 @@ class UsersController < ApplicationController
       user = User.find(id: params[:id])
       current_user.following.create(followed: user)
       render json: {message: "you are now following #{user.name}"}, status: :ok
+    end
 
     private
 
